@@ -7,7 +7,7 @@ class WebSpider(scrapy.Spider):
         'USER_AGENT':'Frantisek Rehak',
         'AUTOTHROTTLE_ENABLED': True,
         'AUTOTHROTTLE_START_DELAY': 0.5,
-        #'CLOSESPIDER_ITEMCOUNT': 500,
+        'CLOSESPIDER_ITEMCOUNT': 500,
         #'DOWNLOAD_DELAY': 0.1,
         #'RANDOMIZE_DOWNLOAD_DELAY' : False,
     }
@@ -23,12 +23,13 @@ class WebSpider(scrapy.Spider):
             except:
                 print("parse error")
 
-    '''def parse(self, response):
 
-        for image_url in response.css(''):
-            try:
-            
-            
+        next_page = response.xpath('//a[@class="pagging-next"]').extract_first()
+
+        if next_page is not None:
+            yield scrapy.Request(next_page, callback=self.parse)
+
+'''
             image
             response.css("a._2vc3VMce92XEJFrv8_jaeN img::attr(src)").extract()
             
@@ -40,5 +41,7 @@ class WebSpider(scrapy.Spider):
 
             properties
             response.css("div[class='property ng-scope']::text")
-
+            
+            next
+            response.css('a.paging-next').attrib['href']
 '''
