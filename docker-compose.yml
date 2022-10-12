@@ -22,7 +22,8 @@ services:
           - '5432:5432'
         volumes: 
           - ./postgres-data:/var/lib/postgresql/data
-        # TODO komentar
+        # Using volumes I run the create_table.sql script
+        # This .sql file is used to create a table in the database and at the same time to insert scraped data
           - ./create_table.sql:/docker-entrypoint-initdb.d/create_tables.sql
 
     adminer:
