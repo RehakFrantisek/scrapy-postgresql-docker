@@ -3,5 +3,6 @@ WORKDIR /usr/src/app
 COPY . .
 RUN pip install -r requirements.txt
 COPY . .
-CMD set FLASK_APP=app
-CMD flask run
+RUN set FLASK_APP=app
+EXPOSE 8080
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=8080"]

@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def get_connection():
     conn = psycopg2.connect(
-        host='localhost',
+        host='postgres',
         database='postgres',
         user='postgres',
         password='postgres'
@@ -26,4 +26,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=8080)
+    app.run(debug=True)
