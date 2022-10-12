@@ -22,7 +22,8 @@ class WebSpider(scrapy.Spider):
             except:
                 print("parse error")
 
-        # TODO komentar
+        # Due to url change during paging, it wasn't possible to use the built-in function
+        # I solved the situation by incrementing the page_number variable
         self.page_number += 1
         next_page = f'https://www.sreality.cz/hledani/byty/prodej?_escaped_fragment_=&strana={self.page_number}'
 
