@@ -6,29 +6,43 @@
 * Put everything to single docker-compose command so that I can just run "docker-compose up" in the Github repository and see the scraped ads on http://127.0.0.1:8080 page.
 
 
-## Postup prace
-* scrapy -> data
-* data -> json
+## Finished processes
+* website -> scrapy
+* scrapy -> json
+* create table
 * json -> insert script
-* create + insert -> postgre
 
 
-## spiderSReality.py
-* tezba dat
-* ulozeno do sreality.json
+## spider_sreality.py
+* file to work with scrapy
+* is it necessary to define some information (start_url, itemcount, ..)
+* scrapes the defined data and scrolls to the next page
+
 
 ## loadjson.py
-* nacteni jsonu preveden na string
-* append do insert values (create-table.sql)
+* stored json file is loaded as string
+* string is appended to create-table.sql as insert script
+
 
 ## create-table.sql
-* crete table
-* insert values
+* crete table in database
+* insert into database
+
 
 ## docker-compose.yml
-* services (app + postgre)
-* pro testovani adminer
+* services
+  * app to run Dockerfile, define ports and also waiting for postgres service
+  * postgres run the database, define host, user,password and values
+* for testing I used adminer
 
-## HTTP.py
-* sadasd
 
+## app.py
+* used package psycopg2 to connect database
+* created connection and executed data through flask
+
+
+## templates folder
+* base.html
+  * defines CSS and its main template
+* index.html
+  * it is extension of base.html and there are defined records from database
