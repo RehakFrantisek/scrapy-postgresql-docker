@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}- Luxonis project</title>
+    <style>
+        .records {
+            padding: 20px;
+            margin: 10px;
+            background-color: #f7f4f4;
+        }
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          border: 1px solid #ddd;
+        }
+        th, td {
+          text-align: left;
+          padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sreality - 500 records (title + image)</h1>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
