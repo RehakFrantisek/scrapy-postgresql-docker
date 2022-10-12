@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Properties {% endblock %}</h1>
+    <h2>{% block title %} Properties {% endblock %}</h2>
         <div class='records'>
             {% for record in data %}
             <table>
@@ -13,7 +13,7 @@
                 </td>
                 <td style="text-align:right">
                     <a href="{{ record[2] }}">
-                        <img alt="property_image" src="{{ record[2] }}" width=150" height="70">
+                        <img alt="property_image" src="{{ record[2] }}" width=185" height="90">
                     </a>
                 </td>
             </table>
