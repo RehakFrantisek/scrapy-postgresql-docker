@@ -1,4 +1,4 @@
-# Luxonis python developer project
+# Python developer project - example
 
 ## Assignment
 * Use scrapy framework to scrape the first 500 items (title, image url) from https://sreality.cz (flats, sell) and save it in the Postgresql database.

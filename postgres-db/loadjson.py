@@ -1,9 +1,9 @@
 import json
 
-f = open('./srealityscraper/sreality.json')
+f = open('../srealityscraper/sreality.json')
 
 data = json.load(f)
-insertfile = open('create_table.sql', 'a', encoding='utf-8')
+insertfile = open('../create_table.sql', 'a', encoding='utf-8')
 
 for i, x in enumerate(data):
     if i < len(data) - 1:
