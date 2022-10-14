@@ -20,7 +20,7 @@
 
 
 ## loadjson.py
-* stored json file is loaded as string
+* stored json file is loaded
 * string is appended to create-table.sql as insert script
 
 
@@ -38,7 +38,8 @@
 
 ## app.py
 * used package psycopg2 to connect database
-* created connection and executed data through flask
+* created connection and executed select
+* used flask as webframework
 
 
 ## templates folder
